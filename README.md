@@ -53,6 +53,16 @@ quarto render      # build the static site into _site/
 
 Then open `_site/index.html`.
 
+From the repository root, the `Makefile` wraps the common cases:
+
+```bash
+make preview       # = cd quarto-analysis && quarto preview
+make deploy        # render + publish to GitHub Pages (gh-pages branch)
+```
+
+`make deploy` needs push access to `origin` and, one time, GitHub Pages enabled
+for the repo with the `gh-pages` branch as its source.
+
 ## Layout
 
 ```
