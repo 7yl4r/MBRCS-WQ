@@ -1,0 +1,149 @@
+---
+title: "Vertical structure"
+---
+
+Cruises profile the water column with Niskin bottles at **surface**, **mid**
+and **bottom** depths (`depth_class`). This page looks at how properties change
+with depth, and then applies that lens to dissolved oxygen — the "example
+application: oxygen patterns" idea in the outline.
+
+```{python}
+#| echo: false
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import sfer_common as sfer
+
+sfer.style()
+df = sfer.load()
+```
+
+## Depth-class distributions
+
+```{python}
+#| echo: false
+#| fig-cap:
+#|   - "Temperature by depth class."
+#|   - "Salinity by depth class."
+#|   - "CTD dissolved oxygen by depth class (one impossible reading above 15 mg/L is excluded)."
+#|   - "Winkler dissolved oxygen by depth class (sparse coverage)."
+#|   - "Ammonium by depth class (log scale)."
+#|   - "Phosphate by depth class (log scale)."
+#|   - "Nitrate + nitrite by depth class (log scale)."
+#|   - "Nitrate by depth class (log scale)."
+#|   - "Nitrite by depth class (log scale)."
+#|   - "Silicate by depth class (log scale)."
+#|   - "Chlorophyll a by depth class (log scale)."
+#|   - "Pheophytin by depth class (log scale)."
+log_panels = {"nh4", "po4", "no3_no2", "no3", "no2", "si", "chl", "pheo"}
+for col in sfer.ANALYTES:
+    keep = sfer.plausible(df, col)
+    data = [df.loc[(df.depth_class == d) & keep, col].values
+            for d in sfer.DEPTH_ORDER]
+    fig, ax = plt.subplots(figsize=(8.5, 4))
+    sfer.violin_by_position(
+        ax, data, positions=[1, 2, 3], labels=sfer.DEPTH_ORDER,
+        logy=col in log_panels,
+        colors=[sfer.DEPTH_COLORS[d] for d in sfer.DEPTH_ORDER])
+    ax.set_title(sfer.label(col))
+    ax.set_ylabel(sfer.units(col))
+```
+
+Temperature, salinity and oxygen all differ systematically between the surface
+and the bottom; the pigments and nutrients are more variable but still show
+depth structure. The Winkler oxygen violins rest on few samples per depth class
+(134 surface, 29 mid, 20 bottom) and should be read as indicative only.
+
+## Paired surface–bottom differences
+
+By matching surface and bottom bottles from the same cast we can isolate the
+vertical gradient at each station. We do this for **every analyte**; the
+temperature and salinity numbers below are the headline cases.
+
+```{python}
+#| echo: false
+from IPython.display import Markdown, display
+
+key = ["cruise_id", "station", "cast"]
+paired = (df.pivot_table(index=key, columns="depth_class",
+                         values=sfer.ANALYTES, observed=True)
+            .dropna(subset=[("temp", "Surface"), ("temp", "Bottom")]))
+
+diffs = {c: (paired[(c, "Bottom")] - paired[(c, "Surface")]).dropna()
+         for c in sfer.ANALYTES}
+dT, dS = diffs["temp"], diffs["sal"]
+
+display(Markdown(
+    f"**{len(paired):,} casts** have both a surface and a bottom temperature "
+    f"measurement.\n\n"
+    f"- Surface is warmer than bottom in **{100*(dT < 0).mean():.0f}%** of casts "
+    f"(median bottom \u2212 surface = {dT.median():+.2f} \u00b0C).\n"
+    f"- Bottom is saltier than surface in **{100*(dS > 0).mean():.0f}%** of casts "
+    f"(median bottom \u2212 surface = {dS.median():+.2f} PSU)."))
+```
+
+```{python}
+#| echo: false
+#| fig-cap:
+#|   - "Bottom − surface temperature across matched casts."
+#|   - "Bottom − surface salinity across matched casts."
+#|   - "Bottom − surface CTD oxygen across matched casts."
+#|   - "Bottom − surface Winkler oxygen across matched casts (13 paired casts only)."
+#|   - "Bottom − surface ammonium across matched casts."
+#|   - "Bottom − surface phosphate across matched casts."
+#|   - "Bottom − surface nitrate + nitrite across matched casts."
+#|   - "Bottom − surface nitrate across matched casts."
+#|   - "Bottom − surface nitrite across matched casts."
+#|   - "Bottom − surface silicate across matched casts."
+#|   - "Bottom − surface chlorophyll a across matched casts."
+#|   - "Bottom − surface pheophytin across matched casts."
+for col in sfer.ANALYTES:
+    values = diffs[col]
+    # clip the axis to the 1st-99th percentile so a few large differences do not
+    # squash the bulk of the distribution
+    lo, hi = values.quantile(0.01), values.quantile(0.99)
+    nbins = int(min(50, max(8, len(values) // 20)))
+    fig, ax = plt.subplots(figsize=(8.5, 4))
+    ax.hist(values, bins=np.linspace(lo, hi, nbins + 1), color="#1f78b4")
+    ax.axvline(0, color="k", lw=1)
+    ax.set_title(f"Bottom \u2212 surface {sfer.label(col)}")
+    ax.set_xlabel(f"\u0394 {sfer.units(col)}")
+    ax.set_ylabel("casts")
+```
+
+Chlorophyll a, pheophytin and silicate increase towards the bottom most often;
+temperature decreases (surface is warmer in ~73% of casts). Winkler oxygen has
+only 13 paired casts, so its histogram is the roughest of the twelve.
+
+## Example application: oxygen patterns
+
+```{python}
+#| echo: false
+#| fig-cap: "Mean CTD dissolved oxygen by cruise date, surface vs. bottom."
+o2 = df[df["o2_ctd"].between(0, 15)].dropna(subset=["o2_ctd", "datetime"])
+by_depth = (o2.groupby(["datetime", "depth_class"], observed=True)["o2_ctd"]
+              .mean().reset_index())
+
+fig, ax = plt.subplots(figsize=(8.5, 4))
+for d in ["Surface", "Bottom"]:
+    sub = by_depth[by_depth["depth_class"] == d].sort_values("datetime")
+    ax.plot(sub["datetime"], sub["o2_ctd"], marker="o", ms=3, lw=1,
+            color=sfer.DEPTH_COLORS[d], label=d)
+ax.set_ylabel("Dissolved oxygen (mg L\u207b\u00b9)")
+ax.set_xlabel("Date")
+ax.set_title("CTD oxygen, surface vs. bottom")
+ax.legend(title="Depth class")
+sfer.time_axis(ax, df)
+plt.tight_layout()
+```
+
+Surface and bottom oxygen track each other seasonally (higher in winter, lower
+in summer), but the bottom is consistently lower — the signal that would
+motivate closer monitoring for hypoxia in the Keys.
+
+::: {.callout-warning}
+The CTD oxygen record is intermittent (see [Coverage](coverage.qmd)), so these
+cruise-mean lines have gaps. Winkler titrations (`o2_disc`) exist for only ~180
+samples and are not used in this particular figure; they do appear in the
+depth-class violins above, where their sparse coverage is again the main caveat.
+:::

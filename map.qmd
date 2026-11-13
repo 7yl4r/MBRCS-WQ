@@ -1,0 +1,89 @@
+---
+title: "Sampling map"
+---
+
+Where in the Florida Keys and on the west Florida shelf have MBeRCS cruises
+sampled? The land outlines below are drawn from a small vendored
+Natural Earth extract (`assets/florida-land.geojson`), so the maps render
+offline.
+
+```{python}
+#| echo: false
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import sfer_common as sfer
+
+sfer.style()
+df = sfer.load()
+
+LON = (-85.4, -79.7)
+LAT = (24.2, 29.0)
+
+
+def map_axes(ax):
+    sfer.plot_basemap(ax)
+    ax.set_xlim(*LON)
+    ax.set_ylim(*LAT)
+    ax.set_aspect(1 / np.cos(np.radians(np.mean(LAT))))
+    ax.grid(True, color="#d9d9d9", lw=0.5)
+    ax.set_xlabel("Longitude")
+    ax.set_ylabel("Latitude")
+```
+
+## All sample locations
+
+```{python}
+#| fig-cap: "Every discrete sample in the dataset, coloured by station type."
+fig, ax = plt.subplots(figsize=(8, 6.5))
+map_axes(ax)
+
+for stype, color, marker in [("C", "#1f78b4", "o"), ("F", "#e08214", "^")]:
+    sub = df[df["station_type"] == stype]
+    ax.scatter(sub["lon_dec"], sub["lat_dec"], s=6, c=color, marker=marker,
+               alpha=0.35, linewidths=0, label=f"Type {stype} (n={len(sub):,})")
+
+ax.legend(loc="upper left", markerscale=3)
+ax.set_title("MBeRCS discrete sample locations")
+plt.tight_layout()
+```
+
+Samples carry one of two upstream station-type codes. **Type C** samples span
+the full water column (surface, mid and bottom), while **Type F** samples are
+always surface samples. Both types follow the Florida Keys reef tract and the
+west Florida shelf.
+
+## Spatial coverage by year
+
+```{python}
+#| echo: false
+years = sorted(df["year"].dropna().unique())
+for y in years:
+    sub = df[df["year"] == y]
+    fig, ax = plt.subplots(figsize=(8, 6))
+    map_axes(ax)
+    ax.scatter(sub["lon_dec"], sub["lat_dec"], s=6, c="#1f78b4", alpha=0.5, linewidths=0)
+    ax.set_title(f"Sample locations in {int(y)}  (n={len(sub):,})")
+```
+
+The footprint expands over time: early cruises concentrated in the Lower Keys,
+with coverage later spreading north and west across the shelf.
+
+## Station usage
+
+```{python}
+#| echo: false
+from IPython.display import Markdown, display
+
+station_counts = df["station"].value_counts()
+top = ", ".join(f"{s} ({n})" for s, n in station_counts.head(5).items())
+display(Markdown(
+    f"**{df['station'].nunique():,} distinct stations** were occupied across the "
+    f"record. The busiest were {top}."))
+print()
+print(df.groupby("station_type", observed=True).agg(
+    samples=("keyfield", "size"),
+    stations=("station", "nunique"),
+    years=("year", lambda s: f"{int(s.min())}\u2013{int(s.max())}"),
+))
+```

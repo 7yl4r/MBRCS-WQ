@@ -1,0 +1,77 @@
+---
+title: "Parameter statistics"
+---
+
+Basic descriptive statistics for every analyte — the "per-parameter basic
+statistics" section of the report outline.
+
+```{python}
+#| echo: false
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import sfer_common as sfer
+
+sfer.style()
+df = sfer.load()
+```
+
+## Summary statistics
+
+```{python}
+#| echo: false
+table = sfer.stats_table(df).round(3)
+table["n"] = table["n"].map("{:,}".format)
+table
+```
+
+## Distributions
+
+```{python}
+#| echo: false
+#| fig-cap:
+#|   - "Distribution of temperature across all samples."
+#|   - "Distribution of salinity across all samples."
+#|   - "Distribution of CTD dissolved oxygen across all samples (the one impossible reading above 15 mg/L is excluded)."
+#|   - "Distribution of Winkler dissolved oxygen across all samples."
+#|   - "Distribution of ammonium across all samples (log scale)."
+#|   - "Distribution of phosphate across all samples (log scale)."
+#|   - "Distribution of nitrate + nitrite across all samples (log scale)."
+#|   - "Distribution of nitrate across all samples (log scale)."
+#|   - "Distribution of nitrite across all samples (log scale)."
+#|   - "Distribution of silicate across all samples (log scale)."
+#|   - "Distribution of chlorophyll a across all samples (log scale)."
+#|   - "Distribution of pheophytin across all samples (log scale)."
+log_cols = {"nh4", "po4", "no3_no2", "no3", "no2", "si", "chl", "pheo"}
+for col in sfer.ANALYTES:
+    s = df.loc[sfer.plausible(df, col), col]
+    fig, ax = plt.subplots(figsize=(8.5, 4))
+    if col in log_cols:
+        s = s[s > 0]
+        bins = np.logspace(np.log10(s.min()), np.log10(s.max()), 40)
+        ax.set_xscale("log")
+    else:
+        bins = 40
+    ax.hist(s, bins=bins, color="#1f78b4", alpha=0.85)
+    ax.set_title(sfer.label(col))
+    ax.set_ylabel("samples")
+    ax.set_xlabel(sfer.units(col))
+```
+
+The physical properties (temperature, salinity) and both oxygen measures are
+roughly symmetric, whereas the nutrients and the pigments are strongly
+right-skewed — a few high values trace to blooms and coastal inputs — which is
+why those plots use log axes. Note that **nitrate + nitrite** is simply the sum
+of the **nitrate** and **nitrite** columns, so the three are not independent.
+
+How each of these properties changes with depth — surface, mid and bottom
+bottles — is the subject of the [Vertical structure](vertical.qmd) page, which
+shows a depth-class violin for every analyte.
+
+::: {.callout-note}
+**A note on oxygen units.** The two oxygen columns are on different scales:
+`o2_ctd` is in mg/L while `o2_disc` (Winkler titrations) is in µmol/kg. `o2_ctd`
+also contains one physically impossible reading (~6,000 mg/L) that is excluded
+from the plots but kept in the summary table above. `o2_disc` is only available
+for a small number of samples, so its distribution is correspondingly rough.
+:::

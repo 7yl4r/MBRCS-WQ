@@ -1,0 +1,160 @@
+---
+title: "Data coverage"
+---
+
+How much data does MBeRCS contain, when was it collected, and which analytes
+were measured? This page answers the "map of cruise data coverage / time series
+of data coverage / summary of all data types collected" questions from the
+report outline.
+
+```{python}
+#| echo: false
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import sfer_common as sfer
+
+sfer.style()
+df = sfer.load()
+```
+
+## Sampling effort through time
+
+```{python}
+#| fig-cap: "Discrete samples collected per year."
+fig, ax = plt.subplots(figsize=(8.5, 4))
+
+by_year = df.groupby("year").size()
+ax.bar(by_year.index, by_year.values, color="#1f78b4")
+ax.set_title("Samples per year")
+ax.set_xlabel("Year")
+ax.set_ylabel("Samples")
+sfer.time_axis(ax, df, "year")
+ax.tick_params(axis="x", rotation=90)
+```
+
+```{python}
+#| fig-cap: "Number of cruises per year."
+fig, ax = plt.subplots(figsize=(8.5, 4))
+
+cruises = df.groupby("year")["cruise_id"].nunique()
+ax.bar(cruises.index, cruises.values, color="#33a02c")
+ax.set_title("Cruises per year")
+ax.set_xlabel("Year")
+ax.set_ylabel("Cruises")
+sfer.time_axis(ax, df, "year")
+ax.tick_params(axis="x", rotation=90)
+```
+
+```{python}
+#| echo: false
+#| fig-cap: "Cumulative sample count."
+fig, ax = plt.subplots(figsize=(8.5, 3.4))
+cum = df.sort_values("datetime").reset_index(drop=True)
+ax.plot(cum["datetime"], np.arange(1, len(cum) + 1), color="#0b3c5d", lw=2)
+ax.set_title("Cumulative samples collected")
+ax.set_xlabel("Date")
+ax.set_ylabel("Cumulative samples")
+sfer.time_axis(ax, df)
+plt.tight_layout()
+```
+
+Sampling ramped up steadily after the program began in late 2014 and now
+averages roughly 1,000–1,400 discrete samples across about six cruises per
+year.
+
+## Which analytes were measured, and when?
+
+```{python}
+#| echo: false
+#| fig-cap: "Percent of samples per year with a valid value for each analyte (darker = better coverage)."
+years = sorted(df["year"].dropna().unique())
+cols = sfer.ANALYTES
+mat = np.full((len(cols), len(years)), np.nan)
+for i, c in enumerate(cols):
+    for j, y in enumerate(years):
+        sub = df[df["year"] == y]
+        if len(sub):
+            mat[i, j] = sub[c].notna().mean() * 100
+
+fig, ax = plt.subplots(figsize=(8, 6.4))
+im = ax.imshow(mat, aspect="auto", cmap="YlGnBu", vmin=0, vmax=100)
+ax.set_xticks(range(len(years)))
+ax.set_xticklabels([int(y) for y in years], rotation=90)
+ax.set_yticks(range(len(cols)))
+ax.set_yticklabels([sfer.short(c) for c in cols])
+ax.set_title("Analyte availability by year (% of samples)")
+ax.grid(False)
+cbar = fig.colorbar(im, ax=ax, shrink=0.9)
+cbar.set_label("% of samples with a value")
+plt.tight_layout()
+```
+
+```{python}
+#| echo: false
+rows = []
+for c in sfer.ANALYTES:
+    s = df[c]
+    if s.notna().any():
+        yrs = df.loc[s.notna(), "year"]
+        rows.append({
+            "Analyte": sfer.label(c),
+            "Units": sfer.units(c),
+            "n": int(s.notna().sum()),
+            "% of samples": round(s.notna().mean() * 100, 1),
+            "Years": f"{int(yrs.min())}\u2013{int(yrs.max())}",
+        })
+summary = pd.DataFrame(rows).set_index("Analyte")
+summary
+```
+
+Temperature and salinity are effectively complete across the record, and the
+nutrients, chlorophyll a and pheophytin are measured on nearly every sample. Two
+series are much thinner, and they drive most of the caveats on this site:
+
+- **CTD oxygen** (`o2_ctd`) only begins in 2022;
+- **Winkler oxygen** (`o2_disc`) is rare (~180 samples) and falls in just five
+  years — 2014, 2015, 2017, 2025 and 2026 — leaving a 2018–2024 gap.
+
+Both are still shown alongside every other analyte in the analyses that follow,
+but their trends and cycles should be read as indicative only.
+
+## Seasonal sampling pattern
+
+```{python}
+#| echo: false
+#| fig-cap: "Samples by season."
+season_order = ["Winter", "Spring", "Summer", "Autumn"]
+counts = df.groupby("season", observed=True).size().reindex(season_order, fill_value=0)
+fig, ax = plt.subplots(figsize=(8.5, 3.8))
+ax.bar(season_order, counts.values,
+       color=[sfer.SEASON_COLORS[s] for s in season_order])
+ax.set_ylabel("Samples")
+ax.set_title("Samples by season")
+plt.tight_layout()
+```
+
+Sampling is intentionally **bi-monthly**, so effort is spread fairly evenly
+across the year; pooled by season, spring and autumn carry the most samples and
+winter the fewest.
+
+## Quality-control flags
+
+```{python}
+#| echo: false
+#| fig-cap: "Share of samples carrying a non-missing QC flag for each analyte."
+flag_cols = [c for c in df.columns if c.endswith("_flag")]
+flag_pct = (df[flag_cols].notna().mean() * 100).sort_values(ascending=False)
+flag_pct.index = [sfer.label(i.replace("_flag", "")) for i in flag_pct.index]
+
+fig, ax = plt.subplots(figsize=(8.5, 4))
+ax.barh(flag_pct.index[::-1], flag_pct.values[::-1], color="#e08214")
+ax.set_xlabel("% of samples with a flag")
+ax.set_title("QC flags by analyte")
+plt.tight_layout()
+```
+
+Flagged samples are retained in the analyses that follow, but they are worth
+keeping in mind: nutrients carry the most flags (a mix of below-detection and
+suspect values), whereas temperature, salinity and the Winkler oxygen are
+almost entirely unflagged.

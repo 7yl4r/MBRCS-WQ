@@ -1,0 +1,74 @@
+---
+title: "MBeRCS Water Quality Explorer"
+toc: false
+---
+
+The **South Florida Ecosystem Restoration (SFER)** program, run by NOAA in
+collaboration with the Southeast U.S. Marine Biodiversity Observation Network
+(SEUS MBON), conducts bi-monthly research cruises across the Florida Keys and
+the west Florida shelf. Those cruises collect in-situ physical,
+biogeochemical, bio-optical, genomic, planktonic and harmful-algal-bloom
+observations to evaluate the drivers of ecosystem variability and change.
+
+This site is a working exploration of the **discrete water-quality** portion of
+that effort — the **MBeRCS** dataset — focused on the spatial and temporal
+patterns that support monitoring of Florida's coastal and marine resources.
+
+::: {.callout-note}
+**Data source.** All pages read a single file, `../data/SFER_data.csv`, which is
+downloaded from
+[`Ecosystem-Assessment-Lab/SFER`](https://github.com/Ecosystem-Assessment-Lab/SFER/blob/main/DATA/SFER_data.csv).
+It is *not* committed to this repository — see
+[README.md](README.md#data) for the one-line download command.
+:::
+
+## At a glance
+
+```{python}
+#| echo: false
+import sfer_common as sfer
+import pandas as pd
+
+sfer.style()
+df = sfer.load()
+analytes = [c for c in sfer.ANALYTES if df[c].notna().any()]
+```
+
+- **Sampling span:** `{python} f"{df.datetime.min():%B %Y} \u2013 {df.datetime.max():%B %Y}"` (`{python} df.year.nunique()` calendar years)
+- **Cruises:** `{python} df.cruise_id.nunique()` across `{python} df.vessel.nunique()` vessels
+- **Sampling stations:** `{python} f"{df.station.nunique():,}"`
+- **Discrete samples:** `{python} f"{len(df):,}"`
+- **Analytes:** `{python} len(analytes)`
+- **Depth classes:** `{python} f"{(df.depth_class=='Surface').sum():,} surface, {(df.depth_class=='Mid').sum():,} mid, {(df.depth_class=='Bottom').sum():,} bottom"`
+
+## What's here
+
+| Page | What it shows |
+|------|----------------|
+| [Coverage](coverage.qmd) | Sampling effort through time and the availability of each analyte |
+| [Map](map.qmd) | Where samples were collected across the Florida Keys and west Florida shelf |
+| [Parameters](parameters.qmd) | Per-parameter basic statistics and distributions |
+| [Seasonality](seasonality.qmd) | Monthly / seasonal cycles in surface water properties |
+| [Vertical structure](vertical.qmd) | Surface vs. mid vs. bottom conditions, with an oxygen example |
+| [Trends](trends.qmd) | Interannual trends and data-quality flags |
+
+## Reading the data
+
+The CSV is a *tidy, one-row-per-discrete-sample* table. Key columns:
+
+- `keyfield`, `cruise_id`, `datetime` — sample identity and time;
+- `lat_dec`, `lon_dec`, `station`, `station_type` (`C` / `F`, as coded upstream)
+  — location;
+- `depth`, `depth_class` (`Surface` / `Mid` / `Bottom`), `cast`, `nisk_start`,
+  `nisk_end` — sampling depth and Niskin-bottle metadata;
+- one column per analyte (`temp`, `sal`, `o2_ctd`, `o2_disc`, `nh4`, `po4`,
+  `no3_no2`, `no3`, `no2`, `si`, `chl`, `pheo`) plus a matching `*_flag`
+  quality-control column.
+
+::: {.callout-warning}
+**Caveats.** Values are reported as-is; the `*_flag` codebook is maintained by
+the upstream program and is *not* bundled with the CSV, so flagged values are
+shown but not automatically removed. A handful of physically impossible values
+(e.g. an `o2_ctd` reading in the thousands of mg/L) are also present and are
+handled conservatively in the plots.
+:::

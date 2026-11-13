@@ -1,0 +1,49 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+
+website:
+  title: "MBeRCS Water Quality Explorer"
+  description: "Data exploration for the SFER / MBeRCS discrete water-quality dataset."
+  repo-url: https://github.com/Ecosystem-Assessment-Lab/SFER
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Coverage"
+        href: coverage.qmd
+      - text: "Map"
+        href: map.qmd
+      - text: "Parameters"
+        href: parameters.qmd
+      - text: "Seasonality"
+        href: seasonality.qmd
+      - text: "Vertical structure"
+        href: vertical.qmd
+      - text: "Trends"
+        href: trends.qmd
+  page-footer:
+    left: "MBeRCS / SFER data exploration"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles.css
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-summary: "Show code"
+    code-tools: true
+    fig-width: 8.5
+    fig-height: 4.5
+    df-print: paged
+    link-external-newwindow: true
+
+jupyter: python3
+
+execute:
+  freeze: auto

@@ -1,0 +1,31 @@
+/*-- scss:rules --*/
+
+/* Light custom styling for the MBeRCS exploration site. */
+
+/* Figures fill the content column instead of using their intrinsic pixel
+   width (Quarto sets an explicit width attribute on each image, which would
+   otherwise overflow the column and add a horizontal scroll bar). */
+.quarto-figure img,
+figure.figure img,
+img.figure-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.quarto-title-banner {
+  background: linear-gradient(120deg, #0b3c5d 0%, #1f78b4 100%);
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+.callout-note {
+  border-left-color: #1f78b4;
+}
+
+/* Slightly tighten the default table styling. */
+table.dataframe {
+  font-size: 0.85rem;
+}
