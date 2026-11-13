@@ -1,0 +1,198 @@
+[
+  {
+    "objectID": "vertical.html",
+    "href": "vertical.html",
+    "title": "Vertical structure",
+    "section": "",
+    "text": "Cruises profile the water column with Niskin bottles at surface, mid and bottom depths (depth_class). This page looks at how properties change with depth, and then applies that lens to dissolved oxygen — the “example application: oxygen patterns” idea in the outline."
+  },
+  {
+    "objectID": "vertical.html#depth-class-distributions",
+    "href": "vertical.html#depth-class-distributions",
+    "title": "Vertical structure",
+    "section": "Depth-class distributions",
+    "text": "Depth-class distributions\n\n\n\n\n\nTemperature by depth class.\n\n\n\n\n\n\n\nSalinity by depth class.\n\n\n\n\n\n\n\nCTD dissolved oxygen by depth class (one impossible reading above 15 mg/L is excluded).\n\n\n\n\n\n\n\nWinkler dissolved oxygen by depth class (sparse coverage).\n\n\n\n\n\n\n\nAmmonium by depth class (log scale).\n\n\n\n\n\n\n\nPhosphate by depth class (log scale).\n\n\n\n\n\n\n\nNitrate + nitrite by depth class (log scale).\n\n\n\n\n\n\n\nNitrate by depth class (log scale).\n\n\n\n\n\n\n\nNitrite by depth class (log scale).\n\n\n\n\n\n\n\nSilicate by depth class (log scale).\n\n\n\n\n\n\n\nChlorophyll a by depth class (log scale).\n\n\n\n\n\n\n\nPheophytin by depth class (log scale).\n\n\n\n\nTemperature, salinity and oxygen all differ systematically between the surface and the bottom; the pigments and nutrients are more variable but still show depth structure. The Winkler oxygen violins rest on few samples per depth class (134 surface, 29 mid, 20 bottom) and should be read as indicative only."
+  },
+  {
+    "objectID": "vertical.html#paired-surfacebottom-differences",
+    "href": "vertical.html#paired-surfacebottom-differences",
+    "title": "Vertical structure",
+    "section": "Paired surface–bottom differences",
+    "text": "Paired surface–bottom differences\nBy matching surface and bottom bottles from the same cast we can isolate the vertical gradient at each station. We do this for every analyte; the temperature and salinity numbers below are the headline cases.\n\n\n3,171 casts have both a surface and a bottom temperature measurement.\n\nSurface is warmer than bottom in 70% of casts (median bottom − surface = -0.12 °C).\nBottom is saltier than surface in 58% of casts (median bottom − surface = +0.01 PSU).\n\n\n\n\n\n\n\n\nBottom − surface temperature across matched casts.\n\n\n\n\n\n\n\nBottom − surface salinity across matched casts.\n\n\n\n\n\n\n\nBottom − surface CTD oxygen across matched casts.\n\n\n\n\n\n\n\nBottom − surface Winkler oxygen across matched casts (13 paired casts only).\n\n\n\n\n\n\n\nBottom − surface ammonium across matched casts.\n\n\n\n\n\n\n\nBottom − surface phosphate across matched casts.\n\n\n\n\n\n\n\nBottom − surface nitrate + nitrite across matched casts.\n\n\n\n\n\n\n\nBottom − surface nitrate across matched casts.\n\n\n\n\n\n\n\nBottom − surface nitrite across matched casts.\n\n\n\n\n\n\n\nBottom − surface silicate across matched casts.\n\n\n\n\n\n\n\nBottom − surface chlorophyll a across matched casts.\n\n\n\n\n\n\n\nBottom − surface pheophytin across matched casts.\n\n\n\n\nChlorophyll a, pheophytin and silicate increase towards the bottom most often; temperature decreases (surface is warmer in ~73% of casts). Winkler oxygen has only 13 paired casts, so its histogram is the roughest of the twelve."
+  },
+  {
+    "objectID": "vertical.html#example-application-oxygen-patterns",
+    "href": "vertical.html#example-application-oxygen-patterns",
+    "title": "Vertical structure",
+    "section": "Example application: oxygen patterns",
+    "text": "Example application: oxygen patterns\n\n\n\n\n\nMean CTD dissolved oxygen by cruise date, surface vs. bottom.\n\n\n\n\nSurface and bottom oxygen track each other seasonally (higher in winter, lower in summer), but the bottom is consistently lower — the signal that would motivate closer monitoring for hypoxia in the Keys.\n\n\n\n\n\n\nWarning\n\n\n\nThe CTD oxygen record is intermittent (see Coverage), so these cruise-mean lines have gaps. Winkler titrations (o2_disc) exist for only ~180 samples and are not used in this particular figure; they do appear in the depth-class violins above, where their sparse coverage is again the main caveat."
+  },
+  {
+    "objectID": "seasonality.html",
+    "href": "seasonality.html",
+    "title": "Seasonality",
+    "section": "",
+    "text": "The report outline calls out “seasonality in parameters”. Restricting to surface samples keeps the comparison clean, since the bi-monthly cruises sample the same near-surface waters through the year."
+  },
+  {
+    "objectID": "seasonality.html#monthly-cycles",
+    "href": "seasonality.html#monthly-cycles",
+    "title": "Seasonality",
+    "section": "Monthly cycles",
+    "text": "Monthly cycles\n\n\n\n\n\nSurface temperature by month.\n\n\n\n\n\n\n\nSurface salinity by month.\n\n\n\n\n\n\n\nSurface CTD dissolved oxygen by month.\n\n\n\n\n\n\n\nSurface Winkler dissolved oxygen by month (sparse coverage).\n\n\n\n\n\n\n\nSurface ammonium by month (log scale).\n\n\n\n\n\n\n\nSurface phosphate by month (log scale).\n\n\n\n\n\n\n\nSurface nitrate + nitrite by month (log scale).\n\n\n\n\n\n\n\nSurface nitrate by month (log scale).\n\n\n\n\n\n\n\nSurface nitrite by month (log scale).\n\n\n\n\n\n\n\nSurface silicate by month (log scale).\n\n\n\n\n\n\n\nSurface chlorophyll a by month (log scale).\n\n\n\n\n\n\n\nSurface pheophytin by month (log scale).\n\n\n\n\nClear structure emerges:\n\nTemperature follows an obvious annual cycle, coolest in Jan–Feb and warmest in Jul–Aug.\nSalinity is highest in the dry spring (Mar–May) and dips in the wet season (Aug–Oct) when rainfall and runoff freshen the shelf.\nChlorophyll a, pheophytin and the nutrients peak in the wetter, warmer months, when runoff and mixing deliver nutrients to the surface.\nOxygen (both the CTD and Winkler measures) is highest in the cooler months, consistent with greater gas solubility at lower temperatures.\n\n\n\n\n\n\n\nNote\n\n\n\nReading the sparse analytes. Winkler oxygen (o2_disc) has so few surface samples, spread over so few months, that each monthly violin is built from a handful of points — read its shape with caution. And because nitrate + nitrite is the sum of nitrate and nitrite, those three panels are not independent of one another."
+  },
+  {
+    "objectID": "seasonality.html#seasonal-medians",
+    "href": "seasonality.html#seasonal-medians",
+    "title": "Seasonality",
+    "section": "Seasonal medians",
+    "text": "Seasonal medians\n\n\n\n\n\n\n\n\n\nTemperature\nSalinity\nDissolved oxygen (CTD)\nDissolved oxygen (Winkler)\nAmmonium (NH₄⁺)\nPhosphate (PO₄³⁻)\nNitrate + nitrite (NO₃⁻+NO₂⁻)\nNitrate (NO₃⁻)\nNitrite (NO₂⁻)\nSilicate (SiO₄)\nChlorophyll a\nPheophytin\n\n\nseason\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWinter\n21.642\n35.603\n7.076\n222.630\n0.444\n0.040\n0.080\n0.050\n0.025\n2.217\n0.853\n0.316\n\n\nSpring\n26.008\n36.295\n6.376\n218.100\n0.371\n0.040\n0.050\n0.030\n0.013\n2.092\n0.466\n0.190\n\n\nSummer\n30.686\n36.153\n5.985\n198.567\n0.451\n0.046\n0.079\n0.050\n0.020\n2.832\n0.768\n0.273\n\n\nAutumn\n28.674\n35.613\n5.996\n195.480\n0.590\n0.040\n0.080\n0.054\n0.024\n2.600\n1.029\n0.402\n\n\n\n\n\n\n\n\n\n\n\n\nSurface temperature by month, with the median marked — the clearest seasonal signal in the dataset.\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nReading the seasonal signal. Because the cruises are only bi-monthly, each monthly violin pools several years of observations. The shape and width of a violin therefore reflect both within-season variability and interannual differences, not just day-to-day spread. The white dot marks the median."
+  },
+  {
+    "objectID": "map.html",
+    "href": "map.html",
+    "title": "Sampling map",
+    "section": "",
+    "text": "Where in the Florida Keys and on the west Florida shelf have MBeRCS cruises sampled? The land outlines below are drawn from a small vendored Natural Earth extract (assets/florida-land.geojson), so the maps render offline."
+  },
+  {
+    "objectID": "map.html#all-sample-locations",
+    "href": "map.html#all-sample-locations",
+    "title": "Sampling map",
+    "section": "All sample locations",
+    "text": "All sample locations\n\n\nShow code\nfig, ax = plt.subplots(figsize=(8, 6.5))\nmap_axes(ax)\n\nfor stype, color, marker in [(\"C\", \"#1f78b4\", \"o\"), (\"F\", \"#e08214\", \"^\")]:\n    sub = df[df[\"station_type\"] == stype]\n    ax.scatter(sub[\"lon_dec\"], sub[\"lat_dec\"], s=6, c=color, marker=marker,\n               alpha=0.35, linewidths=0, label=f\"Type {stype} (n={len(sub):,})\")\n\nax.legend(loc=\"upper left\", markerscale=3)\nax.set_title(\"MBeRCS discrete sample locations\")\nplt.tight_layout()\n\n\n\n\n\nEvery discrete sample in the dataset, coloured by station type.\n\n\n\n\nSamples carry one of two upstream station-type codes. Type C samples span the full water column (surface, mid and bottom), while Type F samples are always surface samples. Both types follow the Florida Keys reef tract and the west Florida shelf."
+  },
+  {
+    "objectID": "map.html#spatial-coverage-by-year",
+    "href": "map.html#spatial-coverage-by-year",
+    "title": "Sampling map",
+    "section": "Spatial coverage by year",
+    "text": "Spatial coverage by year\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe footprint expands over time: early cruises concentrated in the Lower Keys, with coverage later spreading north and west across the shelf."
+  },
+  {
+    "objectID": "map.html#station-usage",
+    "href": "map.html#station-usage",
+    "title": "Sampling map",
+    "section": "Station usage",
+    "text": "Station usage\n\n\n221 distinct stations were occupied across the record. The busiest were 9.5 (176), 57.3 (144), 21LK (140), 9 (139), WS (138).\n\n\n\n              samples  stations      years\nstation_type                              \nC                8060       211  2014–2026\nF                2861        93  2014–2026"
+  },
+  {
+    "objectID": "coverage.html",
+    "href": "coverage.html",
+    "title": "Data coverage",
+    "section": "",
+    "text": "How much data does MBeRCS contain, when was it collected, and which analytes were measured? This page answers the “map of cruise data coverage / time series of data coverage / summary of all data types collected” questions from the report outline."
+  },
+  {
+    "objectID": "coverage.html#sampling-effort-through-time",
+    "href": "coverage.html#sampling-effort-through-time",
+    "title": "Data coverage",
+    "section": "Sampling effort through time",
+    "text": "Sampling effort through time\n\n\nShow code\nfig, ax = plt.subplots(figsize=(8.5, 4))\n\nby_year = df.groupby(\"year\").size()\nax.bar(by_year.index, by_year.values, color=\"#1f78b4\")\nax.set_title(\"Samples per year\")\nax.set_xlabel(\"Year\")\nax.set_ylabel(\"Samples\")\nsfer.time_axis(ax, df, \"year\")\nax.tick_params(axis=\"x\", rotation=90)\n\n\n\n\n\nDiscrete samples collected per year.\n\n\n\n\n\n\nShow code\nfig, ax = plt.subplots(figsize=(8.5, 4))\n\ncruises = df.groupby(\"year\")[\"cruise_id\"].nunique()\nax.bar(cruises.index, cruises.values, color=\"#33a02c\")\nax.set_title(\"Cruises per year\")\nax.set_xlabel(\"Year\")\nax.set_ylabel(\"Cruises\")\nsfer.time_axis(ax, df, \"year\")\nax.tick_params(axis=\"x\", rotation=90)\n\n\n\n\n\nNumber of cruises per year.\n\n\n\n\n\n\n\n\n\nCumulative sample count.\n\n\n\n\nSampling ramped up steadily after the program began in late 2014 and now averages roughly 1,000–1,400 discrete samples across about six cruises per year."
+  },
+  {
+    "objectID": "coverage.html#which-analytes-were-measured-and-when",
+    "href": "coverage.html#which-analytes-were-measured-and-when",
+    "title": "Data coverage",
+    "section": "Which analytes were measured, and when?",
+    "text": "Which analytes were measured, and when?\n\n\n\n\n\nPercent of samples per year with a valid value for each analyte (darker = better coverage).\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnits\nn\n% of samples\nYears\n\n\nAnalyte\n\n\n\n\n\n\n\n\nTemperature\n°C\n10920\n100.0\n2014–2026\n\n\nSalinity\nPSU\n10919\n100.0\n2014–2026\n\n\nDissolved oxygen (CTD)\nmg L⁻¹\n4757\n43.6\n2022–2026\n\n\nDissolved oxygen (Winkler)\nµmol kg⁻¹\n183\n1.7\n2014–2026\n\n\nAmmonium (NH₄⁺)\nµmol L⁻¹\n10751\n98.4\n2014–2026\n\n\nPhosphate (PO₄³⁻)\nµmol L⁻¹\n10872\n99.6\n2014–2026\n\n\nNitrate + nitrite (NO₃⁻+NO₂⁻)\nµmol L⁻¹\n10831\n99.2\n2014–2026\n\n\nNitrate (NO₃⁻)\nµmol L⁻¹\n10831\n99.2\n2014–2026\n\n\nNitrite (NO₂⁻)\nµmol L⁻¹\n10872\n99.6\n2014–2026\n\n\nSilicate (SiO₄)\nµmol L⁻¹\n10872\n99.6\n2014–2026\n\n\nChlorophyll a\nµg L⁻¹\n9695\n88.8\n2014–2026\n\n\nPheophytin\nµg L⁻¹\n9695\n88.8\n2014–2026\n\n\n\n\n\n\n\nTemperature and salinity are effectively complete across the record, and the nutrients, chlorophyll a and pheophytin are measured on nearly every sample. Two series are much thinner, and they drive most of the caveats on this site:\n\nCTD oxygen (o2_ctd) only begins in 2022;\nWinkler oxygen (o2_disc) is rare (~180 samples) and falls in just five years — 2014, 2015, 2017, 2025 and 2026 — leaving a 2018–2024 gap.\n\nBoth are still shown alongside every other analyte in the analyses that follow, but their trends and cycles should be read as indicative only."
+  },
+  {
+    "objectID": "coverage.html#seasonal-sampling-pattern",
+    "href": "coverage.html#seasonal-sampling-pattern",
+    "title": "Data coverage",
+    "section": "Seasonal sampling pattern",
+    "text": "Seasonal sampling pattern\n\n\n\n\n\nSamples by season.\n\n\n\n\nSampling is intentionally bi-monthly, so effort is spread fairly evenly across the year; pooled by season, spring and autumn carry the most samples and winter the fewest."
+  },
+  {
+    "objectID": "coverage.html#quality-control-flags",
+    "href": "coverage.html#quality-control-flags",
+    "title": "Data coverage",
+    "section": "Quality-control flags",
+    "text": "Quality-control flags\n\n\n\n\n\nShare of samples carrying a non-missing QC flag for each analyte.\n\n\n\n\nFlagged samples are retained in the analyses that follow, but they are worth keeping in mind: nutrients carry the most flags (a mix of below-detection and suspect values), whereas temperature, salinity and the Winkler oxygen are almost entirely unflagged."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MBeRCS Water Quality Explorer",
+    "section": "",
+    "text": "The South Florida Ecosystem Restoration (SFER) program, run by NOAA in collaboration with the Southeast U.S. Marine Biodiversity Observation Network (SEUS MBON), conducts bi-monthly research cruises across the Florida Keys and the west Florida shelf. Those cruises collect in-situ physical, biogeochemical, bio-optical, genomic, planktonic and harmful-algal-bloom observations to evaluate the drivers of ecosystem variability and change.\nThis site is a working exploration of the discrete water-quality portion of that effort — the MBeRCS dataset — focused on the spatial and temporal patterns that support monitoring of Florida’s coastal and marine resources."
+  },
+  {
+    "objectID": "index.html#at-a-glance",
+    "href": "index.html#at-a-glance",
+    "title": "MBeRCS Water Quality Explorer",
+    "section": "At a glance",
+    "text": "At a glance\n\nSampling span: December 2014 – September 2026 (13 calendar years)\nCruises: 69 across 4 vessels\nSampling stations: 221\nDiscrete samples: 10,921\nAnalytes: 12\nDepth classes: 7,285 surface, 460 mid, 3,176 bottom"
+  },
+  {
+    "objectID": "index.html#whats-here",
+    "href": "index.html#whats-here",
+    "title": "MBeRCS Water Quality Explorer",
+    "section": "What’s here",
+    "text": "What’s here\n\n\n\nPage\nWhat it shows\n\n\n\n\nCoverage\nSampling effort through time and the availability of each analyte\n\n\nMap\nWhere samples were collected across the Florida Keys and west Florida shelf\n\n\nParameters\nPer-parameter basic statistics and distributions\n\n\nSeasonality\nMonthly / seasonal cycles in surface water properties\n\n\nVertical structure\nSurface vs. mid vs. bottom conditions, with an oxygen example\n\n\nTrends\nInterannual trends and data-quality flags"
+  },
+  {
+    "objectID": "index.html#reading-the-data",
+    "href": "index.html#reading-the-data",
+    "title": "MBeRCS Water Quality Explorer",
+    "section": "Reading the data",
+    "text": "Reading the data\nThe CSV is a tidy, one-row-per-discrete-sample table. Key columns:\n\nkeyfield, cruise_id, datetime — sample identity and time;\nlat_dec, lon_dec, station, station_type (C / F, as coded upstream) — location;\ndepth, depth_class (Surface / Mid / Bottom), cast, nisk_start, nisk_end — sampling depth and Niskin-bottle metadata;\none column per analyte (temp, sal, o2_ctd, o2_disc, nh4, po4, no3_no2, no3, no2, si, chl, pheo) plus a matching *_flag quality-control column.\n\n\n\n\n\n\n\nWarning\n\n\n\nCaveats. Values are reported as-is; the *_flag codebook is maintained by the upstream program and is not bundled with the CSV, so flagged values are shown but not automatically removed. A handful of physically impossible values (e.g. an o2_ctd reading in the thousands of mg/L) are also present and are handled conservatively in the plots."
+  },
+  {
+    "objectID": "parameters.html",
+    "href": "parameters.html",
+    "title": "Parameter statistics",
+    "section": "",
+    "text": "Basic descriptive statistics for every analyte — the “per-parameter basic statistics” section of the report outline."
+  },
+  {
+    "objectID": "parameters.html#summary-statistics",
+    "href": "parameters.html#summary-statistics",
+    "title": "Parameter statistics",
+    "section": "Summary statistics",
+    "text": "Summary statistics\n\n\n\n\n\n\n\n\n\nUnits\nn\nMin\nQ25\nMedian\nMean\nQ75\nMax\n\n\nAnalyte\n\n\n\n\n\n\n\n\n\n\n\n\nTemperature\n°C\n10,920\n4.300\n23.068\n26.714\n25.985\n29.718\n38.481\n\n\nSalinity\nPSU\n10,919\n21.904\n35.298\n36.059\n35.719\n36.443\n39.958\n\n\nDissolved oxygen (CTD)\nmg L⁻¹\n4,757\n1.158\n5.851\n6.316\n7.816\n6.954\n5981.000\n\n\nDissolved oxygen (Winkler)\nµmol kg⁻¹\n183\n118.383\n193.735\n206.820\n206.255\n224.882\n424.010\n\n\nAmmonium (NH₄⁺)\nµmol L⁻¹\n10,751\n0.000\n0.242\n0.467\n0.717\n0.870\n152.500\n\n\nPhosphate (PO₄³⁻)\nµmol L⁻¹\n10,872\n0.000\n0.020\n0.044\n0.081\n0.081\n2.634\n\n\nNitrate + nitrite (NO₃⁻+NO₂⁻)\nµmol L⁻¹\n10,831\n0.000\n0.025\n0.070\n0.493\n0.220\n31.359\n\n\nNitrate (NO₃⁻)\nµmol L⁻¹\n10,831\n-0.030\n0.010\n0.049\n0.436\n0.170\n30.770\n\n\nNitrite (NO₂⁻)\nµmol L⁻¹\n10,872\n0.000\n0.009\n0.020\n0.059\n0.047\n3.990\n\n\nSilicate (SiO₄)\nµmol L⁻¹\n10,872\n-0.010\n1.078\n2.396\n6.882\n7.607\n175.067\n\n\nChlorophyll a\nµg L⁻¹\n9,695\n0.000\n0.367\n0.735\n1.392\n1.709\n25.693\n\n\nPheophytin\nµg L⁻¹\n9,695\n0.000\n0.134\n0.316\n0.598\n0.742\n15.056"
+  },
+  {
+    "objectID": "parameters.html#distributions",
+    "href": "parameters.html#distributions",
+    "title": "Parameter statistics",
+    "section": "Distributions",
+    "text": "Distributions\n\n\n\n\n\nDistribution of temperature across all samples.\n\n\n\n\n\n\n\nDistribution of salinity across all samples.\n\n\n\n\n\n\n\nDistribution of CTD dissolved oxygen across all samples (the one impossible reading above 15 mg/L is excluded).\n\n\n\n\n\n\n\nDistribution of Winkler dissolved oxygen across all samples.\n\n\n\n\n\n\n\nDistribution of ammonium across all samples (log scale).\n\n\n\n\n\n\n\nDistribution of phosphate across all samples (log scale).\n\n\n\n\n\n\n\nDistribution of nitrate + nitrite across all samples (log scale).\n\n\n\n\n\n\n\nDistribution of nitrate across all samples (log scale).\n\n\n\n\n\n\n\nDistribution of nitrite across all samples (log scale).\n\n\n\n\n\n\n\nDistribution of silicate across all samples (log scale).\n\n\n\n\n\n\n\nDistribution of chlorophyll a across all samples (log scale).\n\n\n\n\n\n\n\nDistribution of pheophytin across all samples (log scale).\n\n\n\n\nThe physical properties (temperature, salinity) and both oxygen measures are roughly symmetric, whereas the nutrients and the pigments are strongly right-skewed — a few high values trace to blooms and coastal inputs — which is why those plots use log axes. Note that nitrate + nitrite is simply the sum of the nitrate and nitrite columns, so the three are not independent.\nHow each of these properties changes with depth — surface, mid and bottom bottles — is the subject of the Vertical structure page, which shows a depth-class violin for every analyte.\n\n\n\n\n\n\nNote\n\n\n\nA note on oxygen units. The two oxygen columns are on different scales: o2_ctd is in mg/L while o2_disc (Winkler titrations) is in µmol/kg. o2_ctd also contains one physically impossible reading (~6,000 mg/L) that is excluded from the plots but kept in the summary table above. o2_disc is only available for a small number of samples, so its distribution is correspondingly rough."
+  },
+  {
+    "objectID": "trends.html",
+    "href": "trends.html",
+    "title": "Trends & events",
+    "section": "",
+    "text": "Finally, the report outline asks about longer-term change and discrete events. Here we look at interannual trends in surface waters and then mine the notes field for programmatic flags."
+  },
+  {
+    "objectID": "trends.html#interannual-trends",
+    "href": "trends.html#interannual-trends",
+    "title": "Trends & events",
+    "section": "Interannual trends",
+    "text": "Interannual trends\n\n\n\n\n\nAnnual surface temperature; the dashed line is a linear fit.\n\n\n\n\n\n\n\nAnnual surface salinity; the dashed line is a linear fit.\n\n\n\n\n\n\n\nAnnual surface CTD oxygen; the dashed line is a linear fit over its short (2022–2026) record.\n\n\n\n\n\n\n\nAnnual surface Winkler oxygen — five years in two epochs (2014–2017 and 2025–2026); the line is broken and no fit is drawn.\n\n\n\n\n\n\n\nAnnual surface ammonium; the dashed line is a linear fit.\n\n\n\n\n\n\n\nAnnual surface phosphate; the dashed line is a linear fit.\n\n\n\n\n\n\n\nAnnual surface nitrate + nitrite; the dashed line is a linear fit.\n\n\n\n\n\n\n\nAnnual surface nitrate; the dashed line is a linear fit.\n\n\n\n\n\n\n\nAnnual surface nitrite; the dashed line is a linear fit.\n\n\n\n\n\n\n\nAnnual surface silicate; the dashed line is a linear fit.\n\n\n\n\n\n\n\nAnnual surface chlorophyll a; the dashed line is a linear fit.\n\n\n\n\n\n\n\nAnnual surface pheophytin; the dashed line is a linear fit.\n\n\n\n\n\n\n\n\n\n\n\n\n\nChange per decade\nUnits\nYears covered\nn years\n\n\nAnalyte\n\n\n\n\n\n\n\n\nTemperature\n1.866\n°C\n2014–2026\n13\n\n\nSalinity\n0.342\nPSU\n2014–2026\n13\n\n\nDissolved oxygen (CTD)\n-0.547\nmg L⁻¹\n2022–2026\n5\n\n\nDissolved oxygen (Winkler)\n—\nµmol kg⁻¹\n2014–2026\n5\n\n\nAmmonium (NH₄⁺)\n-0.135\nµmol L⁻¹\n2014–2026\n13\n\n\nPhosphate (PO₄³⁻)\n-0.015\nµmol L⁻¹\n2014–2026\n13\n\n\nNitrate + nitrite (NO₃⁻+NO₂⁻)\n-0.12\nµmol L⁻¹\n2014–2026\n13\n\n\nNitrate (NO₃⁻)\n-0.093\nµmol L⁻¹\n2014–2026\n13\n\n\nNitrite (NO₂⁻)\n-0.023\nµmol L⁻¹\n2014–2026\n13\n\n\nSilicate (SiO₄)\n0.135\nµmol L⁻¹\n2014–2026\n13\n\n\nChlorophyll a\n-0.484\nµg L⁻¹\n2014–2026\n13\n\n\nPheophytin\n0.141\nµg L⁻¹\n2014–2026\n13\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThese are exploratory linear fits on annual medians of a short (2014–2026) record with a changing spatial footprint — they suggest direction, not significance. Salinity and temperature in particular have both strong seasonal cycles and cruise-to-cruise variation that a simple annual median smooths but does not remove.\nTwo analytes need extra care. CTD oxygen only spans 2022–2026, so its fit is a five-point line. Winkler oxygen spans just five years in two epochs (2014–2017 and 2025–2026) with a 2018–2024 gap, so its series is drawn with a broken line and no fit is drawn — a straight line through those points would describe the gap, not a trend."
+  },
+  {
+    "objectID": "trends.html#events-noted-in-the-data",
+    "href": "trends.html#events-noted-in-the-data",
+    "title": "Trends & events",
+    "section": "Events noted in the data",
+    "text": "Events noted in the data\n\n\n32 distinct annotations were recorded in the notes field.\n\n\n\n\n\n\n\n\n\nYear\nCruise\nNote\n\n\n\n\n0\n2015\nWS15264\nNew master file: master2\n\n\n1\n2015\nWS15264\nSALINITIES OFF BY &gt;0.1\n\n\n2\n2015\nWS15264\nDIC (W) Bottle 509 taken underway, not at any ...\n\n\n3\n2016\nWS16004\nno nuts/chl; discarded\n\n\n4\n2016\nWS16130\nTwo chl outliers from HAB, stn 32 and 33\n\n\n5\n2017\nWS17030\nTurner C7 Fluorometer went bad, do not use data\n\n\n6\n2017\nWS17086\nDIC 19 19I = 14I?\n\n\n7\n2025\nWS25024\nCTD too close to surface, some bottles came ou...\n\n\n8\n2025\nWS25024\nAdded station due to high underway fluoresence...\n\n\n9\n2025\nWS25024\nPeople noted water looked brownish--high KB co...\n\n\n10\n2025\nWS25024\nSome modulo errors, sensor data didn't seem to...\n\n\n11\n2025\nWS25024\nModulo error count: 8, sensor dara didn't appe...\n\n\n12\n2025\nWS25024\nToo shallow for profile, just fired bottles at...\n\n\n13\n2025\nHG25083\nCTD may have bumped bottom, pulled up a bit\n\n\n14\n2025\nHG25083\nO2 values different on upcast afte DCM\n\n\n15\n2025\nHG25083\nSampled ~1nm from waypoint\n\n\n16\n2025\nHG25083\nswapped SBE43 O2 sensor; serial comms timeout ...\n\n\n17\n2025\nHG25083\nshallower than reported depth, tapped bottom a...\n\n\n18\n2025\nHG25083\nventing knobs at top of some niskins weren't t...\n\n\n19\n2025\nHG25083\nhit bottom at ~9m payout\n\n\n20\n2025\nHG25083\ninitial depth reading was shallower than actua...\n\n\n21\n2025\nHG25083\npossibly misheard depth readout and sampled sh...\n\n\n22\n2025\nHG25083\ndepth reading jumping around, was conservative...\n\n\n23\n2025\nHG25083\nall CTD sensors fluctuating a lot\n\n\n24\n2026\nHG26081\nchl and nuts not sampled\n\n\n25\n2026\nHG26081\nalmost the spot--station called due to low vis...\n\n\n26\n2026\nHG26081\nstation data not recorded; filled in from UW d...\n\n\n27\n2026\nHG26081\nDIC bottom samples collected by accident\n\n\n28\n2026\nWB26168\nniskin 1,2 bottom didn't close\n\n\n29\n2026\nWB26168\nniskin 7,8 bottom didn't close\n\n\n30\n2026\nWB26168\nniskin 5 didn't close, no samples collected\n\n\n31\n2026\nWB26168\nniskin 10 leaking\n\n\n\n\n\n\n\nThe annotations capture instrument problems, sampling oddities and bloom-related decisions — useful context when a cruise looks anomalous. Because they are free text, they are worth reviewing before excluding any data."
+  },
+  {
+    "objectID": "trends.html#seasonal-decomposition",
+    "href": "trends.html#seasonal-decomposition",
+    "title": "Trends & events",
+    "section": "Seasonal decomposition",
+    "text": "Seasonal decomposition\nThe annual cycles shown earlier can be separated from the longer-term drift with a classical additive decomposition: a Gaussian-weighted local average (σ ≈ 9 months) gives the trend, the average detrended value for each calendar month gives the seasonal component, and what is left over is the residual. A Gaussian smoother is used rather than a rectangular moving average because a moving average has hard notches at 12, 24, 36 … months — a 24-month window, for example, deliberately excludes ~2-year variability from the trend and dumps it into the residuals, where it masquerades as a spurious harmonic. Each figure below places all three components on a single axis — the trend (red) is drawn as an anomaly from the series mean so that it shares a scale with the seasonal cycle (green), and the residuals (brown) are points joined to the zero line by stems. The implementation lives in sfer_common.seasonal_decompose and sfer_common.decomposition_plot, so no extra dependency (such as statsmodels) is required.\n\n\n\n\n\nSurface temperature — trend, seasonal and residual components.\n\n\n\n\n\n\n\nSurface salinity — trend, seasonal and residual components.\n\n\n\n\n\n\n\nSurface CTD dissolved oxygen — trend, seasonal and residual components (sparse coverage; indicative only).\n\n\n\n\n\n\n\nSurface Winkler dissolved oxygen — trend, seasonal and residual components (very sparse coverage; indicative only).\n\n\n\n\n\n\n\nSurface ammonium — trend, seasonal and residual components.\n\n\n\n\n\n\n\nSurface phosphate — trend, seasonal and residual components.\n\n\n\n\n\n\n\nSurface nitrate + nitrite — trend, seasonal and residual components.\n\n\n\n\n\n\n\nSurface nitrate — trend, seasonal and residual components.\n\n\n\n\n\n\n\nSurface nitrite — trend, seasonal and residual components.\n\n\n\n\n\n\n\nSurface silicate — trend, seasonal and residual components.\n\n\n\n\n\n\n\nSurface chlorophyll a — trend, seasonal and residual components.\n\n\n\n\n\n\n\nSurface pheophytin — trend, seasonal and residual components.\n\n\n\n\n\n\n\n\n\n\n\n\n\nSeasonal amplitude\nTrend / decade\nResidual SD\nUnits\n\n\nAnalyte\n\n\n\n\n\n\n\n\nTemperature\n10.080\n0.092\n1.007\n°C\n\n\nSalinity\n1.130\n0.651\n0.502\nPSU\n\n\nDissolved oxygen (CTD)\n2.470\n-0.226\n0.703\nmg L⁻¹\n\n\nDissolved oxygen (Winkler)\n7.630\n-11.592\n10.703\nµmol kg⁻¹\n\n\nAmmonium (NH₄⁺)\n0.398\n0.211\n0.328\nµmol L⁻¹\n\n\nPhosphate (PO₄³⁻)\n0.043\n-0.009\n0.044\nµmol L⁻¹\n\n\nNitrate + nitrite (NO₃⁻+NO₂⁻)\n0.199\n-0.217\n0.193\nµmol L⁻¹\n\n\nNitrate (NO₃⁻)\n0.130\n-0.215\n0.131\nµmol L⁻¹\n\n\nNitrite (NO₂⁻)\n0.075\n-0.009\n0.074\nµmol L⁻¹\n\n\nSilicate (SiO₄)\n5.745\n-1.623\n2.697\nµmol L⁻¹\n\n\nChlorophyll a\n1.285\n-0.751\n0.554\nµg L⁻¹\n\n\nPheophytin\n0.367\n0.334\n0.205\nµg L⁻¹\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nReading these plots. The trend, seasonal and residual components are additive: together they reproduce the monthly anomaly (the series minus its mean). Residuals are not expected to be white noise — a smooth trend cannot track every interannual wiggle, so the quasi-biennial wiggles visible in some residuals (most clearly salinity and oxygen) are real variability the trend does not follow, not a failure of the seasonal term. Because the cruises are only bi-monthly, roughly 45 % of the calendar months have no sample and are filled by linear interpolation before decomposition; the trend and seasonal curves are drawn across the whole record, but the residuals are plotted only at months with a real observation, so every residual point is a genuine monthly mean. Coverage is much thinner for Winkler oxygen (20 sampled months spread over just five years, with a 2018–2024 gap) and CTD oxygen (29), so those two decompositions are indicative only."
+  },
+  {
+    "objectID": "trends.html#a-harmonic-model-of-the-seasonal-cycle",
+    "href": "trends.html#a-harmonic-model-of-the-seasonal-cycle",
+    "title": "Trends & events",
+    "section": "A harmonic model of the seasonal cycle",
+    "text": "A harmonic model of the seasonal cycle\nThe decomposition above answers how much of each series is seasonal; it does not say what shape that seasonality has. A harmonic (Fourier) model does. It writes the detrended monthly means as a sum of sinusoids,\n\\[y(t) = \\text{trend}(t) + \\sum_{k=1}^{3}\\big[a_k\\cos(2\\pi k t/12) + b_k\\sin(2\\pi k t/12)\\big] + \\varepsilon_t,\\]\nand then ranks the harmonics by the share of detrended variance each one explains. The first harmonic (\\(k=1\\)) is the annual cycle, \\(k=2\\) the semi-annual cycle and \\(k=3\\) the four-monthly cycle. The cruises sample roughly every two months, so the Nyquist period is about four months and shorter harmonics would be aliased — they are not fitted. The fit uses only the months with real observations (the trend comes from the Gaussian smoother above), so it is not affected by interpolation. This is where the extra packages the analysis allows earn their keep: the regression is fitted with statsmodels and the spectrum further down uses scipy.\n\n\n\n\n\nHarmonic make-up of each analyte’s seasonal signal. Bar length is the total seasonal R² (the share of detrended variance explained by the three harmonics together); the segments split it between the annual, semi-annual and four-monthly components.\n\n\n\n\nRead left to right, the bars answer the question directly: the annual harmonic is the main component for most analytes, but not all. Oxygen (both sensors) adds a strong semi-annual component, while pheophytin and phosphate are actually led by the four-monthly harmonic. The nutrients as a group have a much weaker seasonal R² (short bars) than the physical analytes. The table ranks the components for every analyte, with the month in which each peaks:\n\n\n\n\n\n\n\n\n\nSeasonal R²\nMain\nSecond\nThird\n\n\nAnalyte\n\n\n\n\n\n\n\n\nTemperature\n0.92\nAnnual — 83% · peak Jul\nSemi-annual — 2% · peak Apr\nFour-monthly — 1% · peak Jul\n\n\nSalinity\n0.42\nAnnual — 32% · peak May\nSemi-annual — 7% · peak May\nFour-monthly — 6% · peak Aug\n\n\nDissolved oxygen (CTD)\n0.69\nAnnual — 57% · peak Jan\nSemi-annual — 15% · peak Jan\nFour-monthly — 8% · peak Jun\n\n\nDissolved oxygen (Winkler)\n0.80\nAnnual — 34% · peak Jan\nSemi-annual — 15% · peak Jul\nFour-monthly — 10% · peak Jan\n\n\nAmmonium (NH₄⁺)\n0.16\nAnnual — 12% · peak Sep\nFour-monthly — 3% · peak Feb\nSemi-annual — 0% · peak Mar\n\n\nPhosphate (PO₄³⁻)\n0.12\nFour-monthly — 6% · peak Nov\nSemi-annual — 5% · peak Nov\nAnnual — 3% · peak Oct\n\n\nNitrate + nitrite (NO₃⁻+NO₂⁻)\n0.12\nAnnual — 7% · peak Sep\nSemi-annual — 5% · peak Jan\nFour-monthly — 2% · peak Jun\n\n\nNitrate (NO₃⁻)\n0.12\nAnnual — 8% · peak Sep\nSemi-annual — 3% · peak Jul\nFour-monthly — 2% · peak Oct\n\n\nNitrite (NO₂⁻)\n0.13\nSemi-annual — 7% · peak Jul\nAnnual — 4% · peak Aug\nFour-monthly — 1% · peak Feb\n\n\nSilicate (SiO₄)\n0.13\nAnnual — 9% · peak Jul\nSemi-annual — 4% · peak Aug\nFour-monthly — 1% · peak Jan\n\n\nChlorophyll a\n0.38\nAnnual — 27% · peak Oct\nFour-monthly — 13% · peak Jan\nSemi-annual — 1% · peak Feb\n\n\nPheophytin\n0.29\nFour-monthly — 18% · peak Jun\nAnnual — 10% · peak Nov\nSemi-annual — 6% · peak Jul\n\n\n\n\n\n\n\nThe figures below show those components over a calendar year: the annual and semi-annual harmonics as separate lines, and their sum (the reconstructed seasonal cycle) in black. A tall annual component that peaks in summer with a small semi-annual term gives the smooth single-peak cycle familiar for temperature; a double-humped shape (as for oxygen) needs the semi-annual term.\n\n\n\n\n\nTemperature — harmonic components of the seasonal cycle.\n\n\n\n\n\n\n\nSalinity — harmonic components of the seasonal cycle.\n\n\n\n\n\n\n\nCTD dissolved oxygen — harmonic components of the seasonal cycle (sparse coverage).\n\n\n\n\n\n\n\nWinkler dissolved oxygen — harmonic components of the seasonal cycle (very sparse coverage).\n\n\n\n\n\n\n\nAmmonium — harmonic components of the seasonal cycle.\n\n\n\n\n\n\n\nPhosphate — harmonic components of the seasonal cycle.\n\n\n\n\n\n\n\nNitrate + nitrite — harmonic components of the seasonal cycle.\n\n\n\n\n\n\n\nNitrate — harmonic components of the seasonal cycle.\n\n\n\n\n\n\n\nNitrite — harmonic components of the seasonal cycle.\n\n\n\n\n\n\n\nSilicate — harmonic components of the seasonal cycle.\n\n\n\n\n\n\n\nChlorophyll a — harmonic components of the seasonal cycle.\n\n\n\n\n\n\n\nPheophytin — harmonic components of the seasonal cycle.\n\n\n\n\n\nThe spectrum behind the cycle\nThe harmonic model asks how much variance sits at the 12-, 6- and 4-month periods specifically. A Lomb–Scargle periodogram instead scans every period and can be computed on the irregularly spaced observations directly, so it can find cycles the harmonic model is not looking for. The heatmap shows the normalised periodogram for every analyte (brighter = stronger); the dashed lines mark the annual and semi-annual periods.\n\n\n\n\n\nLomb–Scargle periodogram of the detrended surface observations, one row per analyte. Dashed lines mark the 12-month (annual) and 6-month (semi-annual) periods.\n\n\n\n\n\n\n\n\n\n\n\n\n\nTop periods (months)\n\n\nAnalyte\n\n\n\n\n\nTemperature\n12 (0.89), 10.5 (0.05), 3.9 (0.04)\n\n\nSalinity\n12 (0.33), 19.7 (0.11), 9.5 (0.11)\n\n\nDissolved oxygen (CTD)\n12.6 (0.56), 6.1 (0.12), 3.8 (0.03)\n\n\nDissolved oxygen (Winkler)\n16 (0.72), 13.8 (0.70), 19 (0.69)\n\n\nAmmonium (NH₄⁺)\n11.6 (0.18), 5.2 (0.15), 9.4 (0.09)\n\n\nPhosphate (PO₄³⁻)\n18.8 (0.14), 5 (0.13), 5.6 (0.10)\n\n\nNitrate + nitrite (NO₃⁻+NO₂⁻)\n9.5 (0.12), 7.5 (0.12), 15.5 (0.09)\n\n\nNitrate (NO₃⁻)\n7.5 (0.13), 9.5 (0.11), 26.8 (0.09)\n\n\nNitrite (NO₂⁻)\n9.5 (0.12), 16.2 (0.10), 6.1 (0.08)\n\n\nSilicate (SiO₄)\n3 (0.23), 11.8 (0.10), 3.8 (0.07)\n\n\nChlorophyll a\n11.9 (0.28), 4.1 (0.14), 4 (0.10)\n\n\nPheophytin\n11.8 (0.14), 4 (0.13), 5.8 (0.12)\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nWhat the spectrum adds. Temperature is almost purely annual — a single sharp 12-month peak. Salinity is different: its 12-month peak is joined by a broad ~20-month peak, the quasi-biennial signal that shows up in the decomposition residuals above. CTD oxygen, chlorophyll and ammonium all have a clear annual peak with visible power at six months. The nutrients (nitrate, nitrite, silicate, phosphate) have weak, poorly resolved spectra, consistent with their low seasonal R². Peaks near the four-month Nyquist limit — and anything shorter — should not be trusted, because the bi-monthly cruise schedule cannot resolve them.\nWinkler oxygen is a trap. It looks like the most powerful spectrum in the panel, but its observations fall in only two epochs (2017 and 2025) around a 2018–2024 gap, so the periodogram is fitting the step between those two clusters rather than a cycle. Its broad, high power across 12–24 months is not significant (a permutation test gives p ≈ 0.1), and a known 12-month cycle sampled at exactly those times would reach similar power — the window has no resolving power. Read peak sharpness, not raw height: normalised power is not comparable across analytes with different numbers of observations, and a sharp isolated peak (temperature) means something very different from a broad plateau (Winkler)."
+  }
+]
